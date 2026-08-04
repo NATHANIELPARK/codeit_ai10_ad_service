@@ -93,8 +93,9 @@ ad-service-v2/
 
 ### 설치
 ```bash
-git clone https://github.com/{조직}/{repo명}.git
-cd ad-service-v2
+git clone https://github.com/NATHANIELPARK/codeit_ai10_ad_service.git
+cd codeit_ai10_ad_service
+git checkout develop
 
 python -m venv venv
 source venv/bin/activate       # Windows: venv\Scripts\activate
