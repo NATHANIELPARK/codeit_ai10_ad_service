@@ -104,7 +104,8 @@ pip install -e ".[dev,frontend]"    # 개발·테스트·웹 UI 전부
 # 또는
 pip install -r requirements.txt
 
-nbstripout --install    # 노트북 작업 시 필수 (최초 1회) — notebooks/README.md 참고
+pip install nbstripout
+nbstripout --install --attributes .gitattributes    # 노트북 작업 시 필수 (최초 1회) — notebooks/README.md 참고
 ```
 
 ### 실행
