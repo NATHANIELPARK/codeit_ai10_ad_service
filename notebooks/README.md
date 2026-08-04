@@ -14,7 +14,8 @@
 
 ```bash
 pip install -e ".[dev]"
-nbstripout --install
+pip install nbstripout
+nbstripout --install --attributes .gitattributes
 ```
 
 이후로는 평소처럼 노트북을 실행하고 저장한 뒤 `git add`/`git commit`만 하면,
