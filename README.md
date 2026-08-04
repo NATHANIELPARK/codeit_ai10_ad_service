@@ -4,7 +4,6 @@
 브랜드 톤 4종(감성/모던/실용/프리미엄)과 판매 시간대(아침/출근러시아워/오후/퇴근러시아워/저녁/심야)에
 맞춘 광고 이미지·문구 세트를 만들어주는 서비스입니다.
 
-## 담당 (R4+R5: 박재철)
 - `app/frontend` — Streamlit UI/UX
 - `app/backend` — FastAPI 로직·상태관리
 - `app/prompt` — Prompt Builder (톤×시간대 템플릿 → image_prompt/ad_copy)
