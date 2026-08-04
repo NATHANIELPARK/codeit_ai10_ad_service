@@ -68,17 +68,7 @@ streamlit run app/frontend/streamlit_app.py
 pytest -q
 ```
 
-## 오늘(Sprint 0) 완료 기준
-- [x] 저장소 생성, `.gitignore`에서 `.env`/모델/업로드 이미지 차단, `.env.example` 커밋
-- [x] Streamlit → FastAPI 실제 연동: 업로드→선택→생성요청→job 폴링→결과 관통 (더미 모델, 진짜 API)
-- [x] `PromptRequest`/`PromptResult` 스키마 확정, 톤 4종·시간대 6종 템플릿 구조 작성
-- [x] `docs/api_contract.md` 작성 (R3 model_server 계약 포함: enum, 생성단위, 성공/실패, 타임아웃)
-- [x] 생성 단위 시간대×톤으로 수정 (출력 규격은 후처리로 분리)
-- [x] Mock/실제 모델 서버를 교체 가능하게 `generation_service.py`로 인터페이스 분리, 실패 시 job "failed" 처리
-- [x] 테스트 36개 작성·통과 (`docs/test_results_gate0.txt`)
-- [ ] 팀원 초대, 브랜치 전략 공유
-- [ ] R3와 API 입력·출력 최종 합의
-- [ ] 협업일지에 결정 이유·수정 가능 항목 기록
+
 
 ## 기준 커밋
 `gate0-service-v0.1` 태그가 Gate 0 기준(더미 모델 E2E 관통) 상태입니다.
