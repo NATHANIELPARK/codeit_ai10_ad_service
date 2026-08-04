@@ -16,7 +16,7 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - run: pytest -q
-      - name: 노트북 출력이 안 지워진 채로 커밋됐는지 검사
+      - name: Notebook Sanity Check
         run: |
           pip install nbstripout
           if find . -name "*.ipynb" -not -path "./.git/*" | grep -q .; then
