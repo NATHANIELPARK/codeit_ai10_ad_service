@@ -162,18 +162,53 @@ pytest -q
 
 ---
 
-## 오늘(Sprint 0) 완료 기준
-- [x] 저장소 생성, `.gitignore`에서 `.env`/모델/업로드 이미지 차단, `.env.example` 커밋
-- [x] Streamlit → FastAPI 실제 연동: 업로드→선택→생성요청→job 폴링→결과 관통 (더미 모델, 진짜 API)
-- [x] `PromptRequest`/`PromptResult` 스키마 확정, 톤 4종·시간대 6종 템플릿 구조 작성
-- [x] `docs/api_contract.md` 작성 (R3 model_server 계약 포함: enum, 생성단위, 성공/실패, 타임아웃)
-- [x] 생성 단위를 시간대×톤으로 수정 (출력 규격은 후처리로 분리)
-- [x] Mock/실제 모델 서버 교체 가능한 `generation_service.py` 인터페이스, 실패 시 job "failed" 처리
-- [x] 테스트 36개 작성·통과
-- [ ] 팀원 초대, 브랜치 전략 공유
-- [ ] R3와 API 입력·출력 최종 합의
-- [ ] 협업일지에 결정 이유·수정 가능 항목 기록
+📢 [레포 공유 + 필수 세팅 안내]
 
+레포: https://github.com/NATHANIELPARK/codeit_ai10_ad_service
+브랜치: develop (당분간 여기에 통합, main은 보호 설정 예정)
+
+──────────────────────
+1. 클론 후 최초 1회 필수 설정
+──────────────────────
+1) 가상환경 만들고 활성화 (venv 또는 miniforge — 자기 환경 켠 상태에서 진행!)
+2) 패키지 설치
+   pip install -e ".[dev,frontend]"
+3) 노트북 쓰실 분(성치용/유수빈)은 필수:
+   nbstripout --install --attributes .gitattributes
+   → 이거 안 하면 커밋할 때 노트북 실행결과가 그대로 남아서 diff가 지저분해지고 머지 충돌 남
+   → 반드시 본인 가상환경 "안"에서 설치 (전역 설치하면 필터 안 걸림)
+4) .env.example → .env 복사, 실제 키 채우기 (.env는 .gitignore로 막혀있으니 커밋 걱정 없음)
+
+──────────────────────
+2. 노트북 작업 시 결과 보존 규칙
+──────────────────────
+nbstripout이 출력을 지우기 때문에, 다른 사람이 pull 받으면 그래프/점수 등 결과가 안 보입니다.
+→ 중요한 결과는 마크다운 셀에 텍스트로 적거나, eval/에 파일로 저장해서 공유해주세요.
+
+──────────────────────
+3. PR 절차 (docs/git_workflow.md 참고)
+──────────────────────
+- PR 전에 반드시: 내 브랜치 commit → main 최신화 → main을 내 브랜치로 merge → 충돌 있으면 "내가" 해결 → push
+  (충돌 해결을 리뷰어에게 넘기지 마세요)
+- PR 만들 때 템플릿 체크리스트 꼭 확인 (pytest 통과, .env 미포함, 노트북 출력 제거 등)
+- PR 제출 후 디스코드로 리뷰어에게 알림
+- 병합은 Squash and merge, 병합 후 브랜치 삭제
+
+──────────────────────
+4. CI 자동 테스트
+──────────────────────
+push/PR마다 GitHub Actions가 자동으로:
+- pytest 전체 테스트 실행
+- 노트북 출력이 안 지워진 채 커밋됐는지 검사 (Notebook Sanity Check)
+빨간 X 뜨면 머지 전에 고쳐주세요. (곧 CI 통과가 머지 필수 조건으로 걸릴 예정)
+
+──────────────────────
+5. 폴더별 담당자
+──────────────────────
+각 폴더에 README.md로 담당자 표시해뒀습니다 — 본인 폴더는 자유롭게 내용 채워서 PR 올려주세요.
+(app/frontend, app/backend, app/prompt: 박재철 / model_server: 성치용·유수빈·김재헌 / deploy: 김재헌 / eval: 안은남·유수빈)
+
+이견 있으면 말씀해주세요!
 ---
 
 ## 협업일지
