@@ -1,0 +1,44 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Data and generated files
+data/uploads/*
+data/outputs/*
+!data/uploads/.gitkeep
+!data/outputs/.gitkeep
+data/samples/*
+!data/samples/.gitkeep
+
+# Models
+models/
+checkpoints/
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
