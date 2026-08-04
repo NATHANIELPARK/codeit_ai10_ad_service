@@ -1,5 +1,9 @@
 # Model Server (R2 · R3 담당)
 
+담당: 성치용, 유수빈, 김재헌
+
+<!-- 실제 모델 선정 이유, 파이프라인 구조, 실행 방법 등은 담당자가 채워주세요 -->
+
 여기가 로컬 GPU 추론 서버(SDXL/SD1.5 + 톤 LoRA×4 + ControlNet/IP-Adapter) 자리입니다.
 R4+R5(app/backend)는 이 서버의 `/infer` 엔드포인트를 호출만 합니다 — 계약은
 [docs/api_contract.md](../docs/api_contract.md) 참고.
